@@ -17,8 +17,8 @@ require-module alacritty
 
 ``` kak
 hook global ModuleLoaded x11 %{
-  alias global terminal alacritty
-  alias global popup alacritty-popup
+  alias global terminal alacritty-terminal
+  alias global popup alacritty-terminal-popup
 }
 ```
 
