@@ -16,7 +16,7 @@ require-module alacritty
 ## Configuration
 
 ``` kak
-hook global ModuleLoaded x11 %{
+hook global ModuleLoaded wayland %{
   alias global terminal alacritty-terminal
   alias global popup alacritty-terminal-popup
 }
