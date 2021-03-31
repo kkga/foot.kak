@@ -1,35 +1,36 @@
-# alacritty.kak
+# foot.kak
 
-[Alacritty] integration for [Kakoune].
+[Foot] integration for [Kakoune].
 
-[Alacritty]: https://github.com/alacritty/alacritty
-[Kakoune]: https://kakoune.org
+[foot]: https://codeberg.org/dnkl/foot
+[kakoune]: https://kakoune.org
 
 ## Installation
 
-Add [`alacritty.kak`](rc/alacritty.kak) to your autoload or source it manually.
+Add [`foot.kak`](rc/foot.kak) to your autoload or source it manually.
 
-``` kak
-require-module alacritty
+```kak
+require-module foot
 ```
 
 ## Configuration
 
-``` kak
+```kak
 hook global ModuleLoaded wayland %{
-  alias global terminal alacritty-terminal
-  alias global popup alacritty-terminal-popup
+  alias global terminal foot-terminal
+  alias global popup foot-terminal-popup
 }
 ```
 
-If you use a tiling window manager, you may want to open windows marked as popups as floating windows.
+If you use a tiling window manager, you may want to open windows marked as
+popups as floating windows.
 
 **Example** – [Sway] configuration:
 
 `~/.config/sway/config`
 
 ```
-for_window [app_id="Alacritty · Popup"] floating enable
+for_window [app_id="dmenu"] floating enable
 ```
 
-[Sway]: https://swaywm.org
+[sway]: https://swaywm.org
