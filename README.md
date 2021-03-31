@@ -22,10 +22,10 @@ hook global ModuleLoaded wayland %{
 }
 ```
 
-If you use a tiling window manager, you may want to open windows marked as
-popups as floating windows.
+When run as a popup, the window id is set to `dmenu`. You may use it configure
+floating rules in your window manager.
 
-**Example** – [Sway] configuration:
+**Example** – [Sway] configuration for popup:
 
 `~/.config/sway/config`
 
