@@ -26,7 +26,7 @@ hook global ModuleLoaded wayland %{
 mode][server-mode] and spawns new windows by running `footclient` for instant
 startup.
 
-When run as a popup, the window id is set to `popup`. You may use it configure
+When run as a popup, the window id is set to `popup`. You may use it to configure
 floating rules in your window manager.
 
 Sway configuration example:
