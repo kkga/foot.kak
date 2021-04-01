@@ -1,7 +1,7 @@
 provide-module foot %{
   define-command foot -params .. -shell-completion -docstring 'Open a new terminal' %{
     nop %sh{
-      setsid foot "$@" < /dev/null > /dev/null 2>&1 &
+      setsid footclient "$@" < /dev/null > /dev/null 2>&1 &
     }
   }
 
