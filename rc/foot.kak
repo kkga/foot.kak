@@ -6,7 +6,7 @@ provide-module foot %{
   }
 
   define-command foot-popup -params .. -shell-completion -docstring 'Open a new terminal as a popup' %{
-    foot -a 'dmenu' %arg{@}
+    foot -a 'popup' %arg{@}
   }
 
   # Conform to terminal as aliases
