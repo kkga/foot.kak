@@ -24,7 +24,7 @@ hook global ModuleLoaded wayland %{
 
 **Note**: this integration assumes that **foot** is running in [server
 mode][server-mode] and spawns new windows by running `footclient` for instant
-startup speed.
+startup.
 
 When run as a popup, the window id is set to `popup`. You may use it configure
 floating rules in your window manager.
