@@ -2,7 +2,7 @@
 
 [Foot] integration for [Kakoune].
 
-[foot]: https://codeberg.org/dnkl/foot
+[Foot]: https://codeberg.org/dnkl/foot
 [kakoune]: https://kakoune.org
 
 ## Installation
@@ -22,12 +22,12 @@ hook global ModuleLoaded wayland %{
 }
 ```
 
-**Note**: this integration assumes that **foot** is running in [server
-mode][server-mode] and spawns new windows by running `footclient` for instant
-startup.
+**Note**: this integration assumes that **foot** is running in
+[server mode][server-mode] and spawns new windows by running `footclient` for
+instant startup.
 
-When run as a popup, the window id is set to `popup`. You may use it to configure
-floating rules in your window manager.
+When run as a popup, the window id is set to `popup`. You may use it to
+configure floating rules in your window manager.
 
 Sway configuration example:
 
