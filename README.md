@@ -1,35 +1,17 @@
 # alacritty.kak
 
-[Alacritty] integration for [Kakoune].
+###### [Documentation] | [Source]
 
-[Alacritty]: https://github.com/alacritty/alacritty
+[Source]: rc/alacritty.kak
+[Documentation]: docs/alacritty.asciidoc
+
+Provides basic [Alacritty] integration for [Kakoune].
+
 [Kakoune]: https://kakoune.org
+[Alacritty]: https://github.com/alacritty/alacritty
 
 ## Installation
 
-Add [`alacritty.kak`](rc/alacritty.kak) to your autoload or source it manually.
-
-``` kak
-require-module alacritty
+``` sh
+git clone https://github.com/alexherbo2/alacritty.kak ~/.config/kak/autoload/alacritty
 ```
-
-## Configuration
-
-``` kak
-hook global ModuleLoaded wayland %{
-  alias global terminal alacritty-terminal
-  alias global popup alacritty-terminal-popup
-}
-```
-
-If you use a tiling window manager, you may want to open windows marked as popups as floating windows.
-
-**Example** – [Sway] configuration:
-
-`~/.config/sway/config`
-
-```
-for_window [app_id="Alacritty · Popup"] floating enable
-```
-
-[Sway]: https://swaywm.org

@@ -1,0 +1,19 @@
+= Alacritty
+
+Provides basic Alacritty integration for Kakoune.
+
+== Usage
+
+Enable Alacritty integration with:
+
+--------------------------------------------------------------------------------
+alacritty-integration-enable
+--------------------------------------------------------------------------------
+
+== Configuration
+
+Sway example configuration:
+
+--------------------------------------------------------------------------------
+for_window [app_id="popup"] floating enable
+--------------------------------------------------------------------------------
