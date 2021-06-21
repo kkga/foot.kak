@@ -9,27 +9,19 @@
 
 Add [`foot.kak`](rc/foot.kak) to your autoload or source it manually.
 
-```kak
-require-module foot
-```
-
-## Configuration
+## Usage
 
 ```kak
-hook global ModuleLoaded wayland %{
-  alias global terminal foot-terminal
-  alias global popup foot-terminal-popup
-}
+foot-integration-enable
 ```
 
 **Note**: this integration assumes that **foot** is running in
-[server mode][server-mode] and spawns new windows by running `footclient` for
-instant startup.
+[server mode][server-mode] and spawns new windows by running `footclient`.
 
-When run as a popup, the window id is set to `popup`. You may use it to
-configure floating rules in your window manager.
+When run as a popup, the window id is set to `popup`. This may be used to
+configure floating rules in a window manager.
 
-Sway configuration example:
+[Sway][sway] configuration example:
 
 ```
 # autostart foot server
