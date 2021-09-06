@@ -5,11 +5,11 @@
 [Foot]: https://codeberg.org/dnkl/foot
 [kakoune]: https://kakoune.org
 
-### Installation
+## Installation
 
 Add [`foot.kak`](rc/foot.kak) to your autoload or source it manually.
 
-### Usage
+## Usage
 
 Enable the integration in your `kakrc`:
 
@@ -17,7 +17,7 @@ Enable the integration in your `kakrc`:
 foot-integration-enable
 ```
 
-### Commands
+## Commands
 
 - `foot-terminal`: creates a new foot window
   - alias: `terminal`
@@ -26,9 +26,9 @@ foot-integration-enable
 - `foot-terminal-panel`: creates a new foot window as panel (see below)
   - alias: `panel`
 
-### Configuration
+## Configuration
 
-#### Options
+### Options
 
 - `foot_normal_cmd` (string): command to run for `foot-terminal`
   - default: `footclient`
@@ -58,12 +58,12 @@ exec foot --server  # autostart foot server
 for_window [app_id="popup"] floating enable # float popup windows
 ```
 
-#### Customizing commands and flags
+### Customizing commands and flags
 
 It's possible to override the default options to use custom commands and/or
 flags for spawning new windows.
 
-#### Examples
+### Configuration examples
 
 To use a new foot process instead of a server client, add the following in your
 `kakrc`:
