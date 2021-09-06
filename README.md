@@ -79,7 +79,7 @@ To pass custom flags to foot popup windows:
 
 ```kak
 foot-integration-enable
-set-option global foot_popup_flags '-o colors.alpha=0.8' # use transparent background for popup
+set-option global foot_popup_flags '--app-id=popup' '-o colors.alpha=0.8' # use transparent background for popup
 ```
 
 To use a completely different command:
