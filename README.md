@@ -5,30 +5,87 @@
 [Foot]: https://codeberg.org/dnkl/foot
 [kakoune]: https://kakoune.org
 
-## Installation
+### Installation
 
 Add [`foot.kak`](rc/foot.kak) to your autoload or source it manually.
 
-## Usage
+### Usage
 
 ```kak
 foot-integration-enable
 ```
 
-**Note**: this integration assumes that **foot** is running in
+### Commands
+
+- `foot-terminal`: creates a new foot window
+  - alias: `terminal`
+- `foot-terminal-popup`: creates a new foot window as popup (see below)
+  - alias: `popup`
+- `foot-terminal-panel`: creates a new foot window as panel (see below)
+  - alias: `panel`
+
+### Configuration
+
+#### Options
+
+- `foot_normal_cmd` (string): command to run for `foot-terminal`
+  - default: `footclient`
+- `foot_popup_cmd` (string): command to run for `foot-terminal-popup`
+  - default: `footclient`
+- `foot_panel_cmd` (string): command to run for `foot-terminal-panel`
+  - default: `footclient`
+
+- `foot_normal_flags` (str-list): additional foot flags for `foot_normal_cmd`
+  - default: `'''
+- `foot_popup_flags` (str-list): additional foot flags for `foot_popup_cmd`
+  - default: `'--app-id=popup'`
+- `foot_panel_flags` (str-list): additional foot flags for `foot_panel_cmd`
+  - default: `'--app-id=panel'`
+
+The default configuration assumes that foot is running in
 [server mode][server-mode] and spawns new windows by running `footclient`.
 
-When run as a popup, the window id is set to `popup`. This may be used to
-configure floating rules in a window manager.
+Default `popup` and `panel` commands add specific `app-id`'s to the foot window
+(`popup` and `panel`), which can be used by a window manager for further
+adjustments.
 
-[Sway][sway] configuration example:
+For example, in [Sway][sway] the following configuration can work:
 
+```sh
+exec foot --server  # autostart foot server
+for_window [app_id="popup"] floating enable # float popup windows
 ```
-# autostart foot server
-exec foot --server
 
-# float popup windows
-for_window [app_id="popup"] floating enable
+#### Customizing commands and flags
+
+It's possible to override the default options to use custom commands and/or
+flags for spawning new windows.
+
+#### Examples
+
+To use a new foot process instead of a server client, add the following in your
+`kakrc`:
+
+```kak
+foot-integration-enable
+set-option global foot_normal_cmd 'foot'
+set-option global foot_popup_cmd 'foot'
+set-option global foot_panel_cmd 'foot'
+```
+
+To pass custom flags to foot popup windows:
+
+```kak
+foot-integration-enable
+set-option global foot_popup_flags '-o colors.alpha=0.8' # use transparent background for popup
+```
+
+To use a completely different command:
+
+```kak
+foot-integration-enable
+set-option global foot_panel_cmd 'sway-panel-term' # use custom command for panel
+set-option -remove global foot_panel_flags # remove default flags
 ```
 
 [sway]: https://swaywm.org
