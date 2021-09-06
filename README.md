@@ -36,7 +36,7 @@ foot-integration-enable
   - default: `footclient`
 
 - `foot_normal_flags` (str-list): additional foot flags for `foot_normal_cmd`
-  - default: `'''
+  - default: `''`
 - `foot_popup_flags` (str-list): additional foot flags for `foot_popup_cmd`
   - default: `'--app-id=popup'`
 - `foot_panel_flags` (str-list): additional foot flags for `foot_panel_cmd`
