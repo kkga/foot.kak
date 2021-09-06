@@ -11,6 +11,8 @@ Add [`foot.kak`](rc/foot.kak) to your autoload or source it manually.
 
 ### Usage
 
+Enable the integration in your `kakrc`:
+
 ```kak
 foot-integration-enable
 ```
