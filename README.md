@@ -22,19 +22,19 @@ foot-integration-enable
 - `foot-terminal`: creates a new foot window
   - alias: `terminal`
 - `foot-terminal-popup`: creates a new foot window as popup (see below)
-  - alias: `popup`
+  - aliases: `terminal-popup`, `popup`
 - `foot-terminal-panel`: creates a new foot window as panel (see below)
-  - alias: `panel`
+  - aliases: `terminal-panel`, `panel`
 
 ## Configuration
 
 ### Options
 
-- `foot_normal_cmd` (string): command to run for `foot-terminal`
+- `foot_normal_cmd` (string): shell command to run for `foot-terminal`
   - default: `footclient`
-- `foot_popup_cmd` (string): command to run for `foot-terminal-popup`
+- `foot_popup_cmd` (string): shell command to run for `foot-terminal-popup`
   - default: `footclient`
-- `foot_panel_cmd` (string): command to run for `foot-terminal-panel`
+- `foot_panel_cmd` (string): shell command to run for `foot-terminal-panel`
   - default: `footclient`
 
 - `foot_normal_flags` (str-list): additional foot flags for `foot_normal_cmd`
@@ -47,9 +47,9 @@ foot-integration-enable
 The default configuration assumes that foot is running in
 [server mode][server-mode] and spawns new windows by running `footclient`.
 
-Default `popup` and `panel` commands add specific `app-id`'s to the foot window
-(`popup` and `panel`), which can be used by a window manager for further
-adjustments.
+Default `terminal-popup` and `terminal-panel` commands add specific `app-id`'s
+to the foot window (`popup` and `panel`), which can be used by a window manager
+for further adjustments.
 
 For example, in [Sway][sway] the following configuration can work:
 

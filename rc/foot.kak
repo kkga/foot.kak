@@ -33,6 +33,8 @@ define-command -override foot-integration-enable -docstring 'enable foot integra
 	remove-hooks global foot-integration
 	hook -group foot-integration global User 'TERM=foot' %{
 		alias global terminal foot-terminal
+		alias global terminal-popup foot-terminal-popup
+		alias global terminal-panel foot-terminal-panel
 		alias global popup foot-terminal-popup
 		alias global panel foot-terminal-panel
 	}
