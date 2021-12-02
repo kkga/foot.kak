@@ -1,3 +1,10 @@
+declare-option str foot_normal_cmd 'footclient'
+declare-option str foot_popup_cmd 'footclient'
+declare-option str foot_panel_cmd 'footclient'
+declare-option str-list foot_normal_flags
+declare-option str-list foot_popup_flags '--app-id=popup'
+declare-option str-list foot_panel_flags '--app-id=panel'
+
 remove-hooks global foot-detection
 hook -group foot-detection global ClientCreate '.*' %{
     trigger-user-hook "TERM=%val{client_env_TERM}"
@@ -7,13 +14,6 @@ define-command -override foot-integration-enable -docstring '
 enable foot integration' %{
     remove-hooks global foot-integration
     hook -group foot-integration global User 'TERM=foot' %{
-        declare-option str foot_normal_cmd 'footclient'
-        declare-option str foot_popup_cmd 'footclient'
-        declare-option str foot_panel_cmd 'footclient'
-        declare-option str-list foot_normal_flags
-        declare-option str-list foot_popup_flags '--app-id=popup'
-        declare-option str-list foot_panel_flags '--app-id=panel'
-
         define-command -override foot-terminal -params .. -shell-completion -docstring '
         foot-terminal <program> [arguments]:
         create a new terminal as a foot window' %{

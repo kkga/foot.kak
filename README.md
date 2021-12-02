@@ -9,14 +9,6 @@
 
 Add [`foot.kak`](rc/foot.kak) to your autoload or source it manually.
 
-## Usage
-
-Enable the integration in your `kakrc`:
-
-```kak
-foot-integration-enable
-```
-
 ## Commands
 
 - `foot-terminal`: creates a new foot window
@@ -69,7 +61,6 @@ To use a new foot process instead of a server client, add the following in your
 `kakrc`:
 
 ```kak
-foot-integration-enable
 set-option global foot_normal_cmd 'foot'
 set-option global foot_popup_cmd 'foot'
 set-option global foot_panel_cmd 'foot'
@@ -78,14 +69,12 @@ set-option global foot_panel_cmd 'foot'
 To pass custom flags to foot popup windows:
 
 ```kak
-foot-integration-enable
 set-option global foot_popup_flags '--app-id=popup' '-o colors.alpha=0.8' # use transparent background for popup
 ```
 
 To use a completely different command:
 
 ```kak
-foot-integration-enable
 set-option global foot_panel_cmd 'sway-panel-term' # use custom command for panel
 set-option -remove global foot_panel_flags # remove default flags
 ```
